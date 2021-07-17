@@ -1,0 +1,68 @@
+<TelaManager>:
+	Screen1:
+		name: 'screen1'
+		id: screen1
+	
+	Screen2:
+		name:'screen2'
+		id: screen2
+
+<Screen1>:
+	BoxLayout:
+		orientation: 'vertical'
+		spacing: '10dp'
+		ActionBar:
+			ActionView:
+				ActionPrevious:
+					title: 'HOME'
+					with_previous: False
+					app_icon: ''
+					ActionButton:
+						text: 'button1'
+					ActionButton:
+						text: 'button2'
+		
+		Spinner:
+			id: spinnercidade
+			background_normal: ''
+			color: 0,0,0,1
+			size_hint_y: None
+			height: '50dp'
+			text: 'selecionar um cidade'
+			values: ['São Paulo', 'Rio de Janeiro']
+			on_text: root.load(self.text)
+		ScrollView:
+			BoxLayout:
+				id: box1
+				orientation: 'vertical'
+				size_hint_y: None
+				height: self.minimum_height
+				
+<Screen2>:
+	BoxLayout:
+		orientation: 'vertical'
+		spacing: '10dp'
+		ActionBar:
+			ActionView:
+				ActionPrevious:
+					on_release: app.root.current = 'screen1'
+					on_release: root.ids.box1.clear_widgets()
+					title: 'IDADE DO CLIENTE'
+					app_icon: ''
+					ActionButton:
+						text: 'button1'
+					ActionButton:
+						text: 'button2'
+						
+		BoxLayout:
+			id: box1
+			orientation: 'vertical'						
+				
+<Spinneroption>:
+	background_down: ''
+	background_normal: ''
+	color: 0,0,0,1
+				
+			
+					
+	
